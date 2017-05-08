@@ -1,0 +1,15 @@
+{
+  "name": "unicorn-ffmpeg",
+  "version": "1.0.0",
+  "description": "Fake FFMPEG binary to extract arguments",
+  "main": "app.js",
+  "scripts": {
+	"start": "node ./app.js"
+  },
+  "author": "Maxime BACONNAIS",
+  "license": "ISC",
+  "dependencies": {
+    "getenv": "^0.7.0",
+    "redis": "^2.7.1"
+  }
+}
