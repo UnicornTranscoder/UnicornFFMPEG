@@ -10,5 +10,6 @@ This software is a part of __PlexCloud@Home__ project, it's a binary to replace 
 ## Installation
 * Clone this repository
 * Run __npm i__
-* Set your Redis configuration in your environement
-* Replace the binary called __Plex Transcoder__ by a symlink on __npm start__
+* Set your Redis configuration in *app.js*
+* Build the binary with `npm run build`
+* Replace the binary called __Plex Transcoder__ by the generated binary

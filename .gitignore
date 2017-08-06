@@ -1,3 +1,5 @@
 .idea
+.nexe
 node_modules/
 npm-debug.log
+Plex Transcoder

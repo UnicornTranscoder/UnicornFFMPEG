@@ -1,12 +1,16 @@
-/**
- * Created by Maxime Baconnais on 07/05/2017.
- */
- 
+const config = {
+	redis: {
+		redis_host: '127.0.0.1',
+		redis_port: 6379,
+		redis_pass: '',
+		redis_db: 0
+	}
+};
+
+/* ----------------------------------------- */
+
 // Get dependencies
 let redis = require('redis');
-
-// Get configuration
-let config = require('./utils/config');
 
 // Get and check session
 let sessionid = false;
