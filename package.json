@@ -2,10 +2,9 @@
   "name": "unicorn-ffmpeg",
   "version": "1.0.0",
   "description": "Fake FFMPEG binary to extract arguments",
-  "main": "app.js",
+  "bin": "app.js",
   "scripts": {
-    "start": "node ./app.js",
-    "build": "nexe -i ./app.js -o \"./Plex Transcoder\""
+    "start": "pkg . -o \"bin/Plex Transcoder\""
   },
   "author": "Maxime BACONNAIS",
   "license": "ISC",
@@ -13,6 +12,14 @@
     "redis": "^2.7.1"
   },
   "devDependencies": {
-    "nexe": "^2.0.0-beta.3"
+    "pkg": "4.2.2"
+  },
+  "pkg": {
+    "targets": [
+      "freebsd",
+	  "linux",
+	  "macos",
+	  "win"
+    ]
   }
 }

@@ -1,23 +1,18 @@
-const config = {
-	redis: {
-		redis_host: '127.0.0.1',
-		redis_port: 6379,
-		redis_pass: '',
-		redis_db: 0
-	}
-};
-
-/* ----------------------------------------- */
-
 // Get dependencies
-let redis = require('redis');
+const redis = require('redis');
+
+// Get configuration
+const config = require('./config');
+
+// Args
+const args = process.argv.slice(2);
 
 // Get and check session
 let sessionid = false;
 let regex = /^http\:\/\/127.0.0.1:32400\/video\/:\/transcode\/session\/(.*)\/progress$/;
-for (idx in process.argv) {
-	if (regex.test(process.argv[idx])) {
-		sessionid = process.argv[idx].match(regex)[1];
+for (idx in args) {
+	if (regex.test(args[idx])) {
+		sessionid = args[idx].match(regex)[1];
 		break;
 	}
 }
@@ -26,6 +21,14 @@ if (sessionid === false) {
 	process.exit(1);
 }
 console.log('Session found: ' + sessionid);
+
+// Parse arguments
+const parsedargs = args.map((o) => {
+	return o.replace(config.plex.plex_url, '{URL}/')
+			.replace(config.plex.plex_sessions, '{SRTSRV}/')
+			.replace(config.plex.plex_usr, '{USRPLEX}/')
+			.replace(config.plex.plex_mount, '{PATH}/')
+});
 
 // Create Redis instance
 let redisClient = redis.createClient({
@@ -46,4 +49,4 @@ redisClient.on('error', (err) => {
 	process.exit(1);
 });
 
-redisClient.set(sessionid, JSON.stringify(process.argv));
+redisClient.set(sessionid, JSON.stringify(parsedargs));

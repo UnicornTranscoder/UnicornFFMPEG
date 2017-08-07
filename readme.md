@@ -1,4 +1,4 @@
-## Unicorn-FFMPEG
+## UnicornFFMPEG
 
 This software is a part of __PlexCloud@Home__ project, it's a binary to replace the official __Plex Transcoder__, the binary will save parameters in your Redis database, the data will be used by __Unicorn-Transcoder__.
 
@@ -9,7 +9,7 @@ This software is a part of __PlexCloud@Home__ project, it's a binary to replace 
 
 ## Installation
 * Clone this repository
-* Run __npm i__
-* Set your Redis configuration in *app.js*
-* Build the binary with `npm run build`
-* Replace the binary called __Plex Transcoder__ by the generated binary
+* Run `npm i`
+* Set your Redis configuration in `config.js`, and change Plex paths if it's necessary
+* Build the binary with `npm start`
+* Replace the Plex binary called `Plex Transcoder` by the generated binary store in `bin`, choose the correct version (depend of your OS)
