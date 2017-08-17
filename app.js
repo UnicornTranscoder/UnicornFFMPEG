@@ -9,7 +9,7 @@ const args = process.argv.slice(2);
 
 // Get and check session
 let sessionid = false;
-let regex = /^http\:\/\/127.0.0.1:32400\/video\/:\/transcode\/session\/(.*)\/progress$/;
+const regex = /^http\:\/\/127.0.0.1:32400\/video\/:\/transcode\/session\/(.*)\/progress$/;
 for (idx in args) {
 	if (regex.test(args[idx])) {
 		sessionid = args[idx].match(regex)[1];
@@ -30,16 +30,27 @@ const parsedargs = args.map((o) => {
 			.replace(config.plex.plex_mount, '{PATH}/')
 });
 
-let segList = '{URL}/video/:/transcode/session/' + sessionid + '/seglist'
-
+// Replace seglist
+const segList = '{URL}/video/:/transcode/session/' + sessionid + '/seglist';
 var forceSegList = false;
+var finalargs = [];
 for (var i = 0; i < parsedargs.length; i++) {
-	if (parsedargs[i] == '-segment_list')
+	if (parsedargs[i] == '-segment_list') {
 		forceSegList = true;
+		finalargs.push(parsedargs[i]);
+	}
 	else if (forceSegList) {
-		parsedargs[i] = segList;
+		finalargs.push(segList);
+		if (parsedargs[i + 1] !== '-segment_list_type') {
+			finalargs.push('-segment_list_type');
+			finalargs.push('csv');
+			finalargs.push('-segment_list_size');
+			finalargs.push('2147483647');
+		}
 		forceSegList = false;
 	}
+	else
+		finalargs.push(parsedargs[i]);
 }
 
 // Create Redis instance
@@ -61,4 +72,4 @@ redisClient.on('error', (err) => {
 	process.exit(1);
 });
 
-redisClient.set(sessionid, JSON.stringify(parsedargs));
+redisClient.set(sessionid, JSON.stringify(finalargs));
