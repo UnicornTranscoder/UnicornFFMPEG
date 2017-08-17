@@ -30,6 +30,18 @@ const parsedargs = args.map((o) => {
 			.replace(config.plex.plex_mount, '{PATH}/')
 });
 
+let segList = '{URL}/video/:/transcode/session/' + sessionid + '/seglist'
+
+var forceSegList = false;
+for (var i = 0; i < parsedargs.length; i++) {
+	if (parsedargs[i] == '-segment_list')
+		forceSegList = true;
+	else if (forceSegList) {
+		parsedargs[i] = segList;
+		forceSegList = false;
+	}
+}
+
 // Create Redis instance
 let redisClient = redis.createClient({
 	host:     config.redis.redis_host,
