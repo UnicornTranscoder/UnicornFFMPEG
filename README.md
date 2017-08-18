@@ -4,8 +4,8 @@ This software is a part of __PlexCloud@Home__ project, it's a binary to replace 
 
 ## Dependencies
 * RedisCache
-* *Unicorn-LoadBalancer*
-* *Unicorn-Transcoder*
+* *UnicornLoadBalancer*
+* *UnicornTranscoder*
 
 ## Installation
 * Clone this repository
