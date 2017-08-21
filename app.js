@@ -20,8 +20,8 @@ if (sessionid === false) {
 	console.error('Failed to find session id');
 	process.exit(1);
 }
-sessionid = sessionid.split('/')[0];
-console.log('Session found: ' + sessionid);
+const propersessionid = sessionid.split('/')[0];
+console.log('Session found: ' + sessionid + ' (' + propersessionid + ')');
 
 // Parse arguments
 const parsedargs = args.map((o) => {
@@ -73,4 +73,4 @@ redisClient.on('error', (err) => {
 	process.exit(1);
 });
 
-redisClient.set(sessionid, JSON.stringify(finalargs));
+redisClient.set(propersessionid, JSON.stringify(finalargs));
