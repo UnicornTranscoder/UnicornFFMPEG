@@ -20,6 +20,7 @@ if (sessionid === false) {
 	console.error('Failed to find session id');
 	process.exit(1);
 }
+sessionid = sessionid.split('/')[0];
 console.log('Session found: ' + sessionid);
 
 // Parse arguments
