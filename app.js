@@ -32,7 +32,7 @@ const parsedargs = args.map((o) => {
 });
 
 // Replace seglist
-const segList = '{URL}/video/:/transcode/session/' + sessionid + '/seglist';
+const segList = '{SEGURL}/video/:/transcode/session/' + sessionid + '/seglist';
 var forceSegList = false;
 var finalargs = [];
 for (var i = 0; i < parsedargs.length; i++) {
