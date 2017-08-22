@@ -25,6 +25,8 @@ console.log('Session found: ' + sessionid + ' (' + propersessionid + ')');
 
 // Parse arguments
 const parsedargs = args.map((o) => {
+	if (o.indexOf('/progress') !== -1)
+		o = o.replace(config.plex.plex_url, '{PROGRESSURL}/');
 	return o.replace(config.plex.plex_url, '{URL}/')
 			.replace(config.plex.plex_sessions, '{SRTSRV}/')
 			.replace(config.plex.plex_usr, '{USRPLEX}/')
