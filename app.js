@@ -4,6 +4,9 @@ const redis = require('redis');
 // Get configuration
 const config = require('./config');
 
+// Env
+const env = process.env;
+
 // Args
 const args = process.argv.slice(2);
 
@@ -75,4 +78,8 @@ redisClient.on('error', (err) => {
 	process.exit(1);
 });
 
-redisClient.set(propersessionid, JSON.stringify(finalargs));
+// Send to redis
+redisClient.set(propersessionid, JSON.stringify({
+	"args": finalargs,
+	"env": env
+}));
