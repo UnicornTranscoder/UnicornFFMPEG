@@ -9,7 +9,7 @@ This software is a part of __UnicornTranscoder__ project, it's a binary to repla
 * [UnicornFFMPEG](https://github.com/UnicornTranscoder/UnicornFFMPEG)
 
 ## Dependencies
-* Redis Server
+* Redis Server  with [Keyspace Notifications](https://redis.io/topics/notifications) enabled
 * Plex Media Server
 
 ## Installation
