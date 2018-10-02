@@ -80,6 +80,6 @@ redisClient.on('error', (err) => {
 
 // Send to redis
 redisClient.set(propersessionid, JSON.stringify({
-	"args": finalargs,
-	"env": env
+	args: finalargs,
+	env
 }));
