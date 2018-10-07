@@ -7,19 +7,18 @@
     "start": "pkg . -o \"bin/Plex Transcoder\""
   },
   "author": "Maxime BACONNAIS",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
-    "redis": "^2.7.1"
+    "node-fetch": "^2.2.0"
   },
   "devDependencies": {
-    "pkg": "4.2.2"
+    "pkg": "^4.3.4"
   },
   "pkg": {
     "targets": [
-      "freebsd",
-	  "linux",
-	  "macos",
-	  "win"
+      "linux",
+      "macos",
+      "win"
     ]
   }
 }
