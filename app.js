@@ -13,6 +13,10 @@ const arg = process.argv.slice(2);
 // Call the load-balancer
 fetch(`${config.URL}api/ffmpeg`, {
 	method: 'POST',
+	headers: {
+            'Accept': 'application/json',
+      	    'Content-Type': 'application/json'
+        },
 	body: JSON.stringify({
 		arg,
 		env
