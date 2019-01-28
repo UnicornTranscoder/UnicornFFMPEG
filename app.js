@@ -24,3 +24,9 @@ fetch(`${config.URL}api/ffmpeg`, {
 }).catch((err) => {
 	console.error(err);
 });
+
+/**
+ * We need to keep alive the process otherwise
+ * plex send a bad mpd file
+**/
+setInterval(() => {}, 3600000);
