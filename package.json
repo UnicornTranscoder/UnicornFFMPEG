@@ -16,9 +16,9 @@
   },
   "pkg": {
     "targets": [
-      "linux",
-      "macos",
-      "win"
+      "linux-node10",
+      "macos-node10",
+      "win-node10"
     ]
   }
 }
