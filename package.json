@@ -1,6 +1,6 @@
 {
   "name": "unicorn-ffmpeg",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Fake FFMPEG binary to extract arguments",
   "bin": "app.js",
   "scripts": {
@@ -9,10 +9,10 @@
   "author": "Maxime BACONNAIS",
   "license": "MIT",
   "dependencies": {
-    "node-fetch": "^2.2.0"
+    "node-fetch": "^2.3.0"
   },
   "devDependencies": {
-    "pkg": "^4.3.4"
+    "pkg": "^4.3.7"
   },
   "pkg": {
     "targets": [
