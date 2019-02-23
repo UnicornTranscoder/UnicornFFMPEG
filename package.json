@@ -1,25 +1,24 @@
 {
   "name": "unicorn-ffmpeg",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Fake FFMPEG binary to extract arguments",
   "bin": "app.js",
   "scripts": {
     "start": "pkg . -o \"bin/Plex Transcoder\""
   },
   "author": "Maxime BACONNAIS",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
-    "redis": "^2.7.1"
+    "node-fetch": "^2.3.0"
   },
   "devDependencies": {
-    "pkg": "4.2.2"
+    "pkg": "^4.3.7"
   },
   "pkg": {
     "targets": [
-      "freebsd",
-	  "linux",
-	  "macos",
-	  "win"
+      "linux-node10",
+      "macos-node10",
+      "win-node10"
     ]
   }
 }
