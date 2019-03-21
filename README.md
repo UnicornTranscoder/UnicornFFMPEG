@@ -14,6 +14,6 @@ This software is a part of __UnicornTranscoder__ project, it's a binary to repla
 ## Installation
 * Clone this repository
 * Run `npm i`
-* Set your load-balancer url in `config.js`
+* Set your load-balancer url in `config.js` (Note you can also set this as an environment variable called `LB_URL`, otherwise it will default to: `http://127.0.0.1:3001/'`)
 * Build the binary with `npm start`
 * Replace the Plex binary called `Plex Transcoder` by the generated binary store in `bin`, choose the correct version (depending on your OS)
