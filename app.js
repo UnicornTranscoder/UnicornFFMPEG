@@ -10,6 +10,20 @@ const env = process.env;
 // Get args
 const arg = process.argv.slice(2);
 
+let id = false;
+
+const checkStatus = () => {
+	if (!id)
+		return;
+	fetch(`${config.URL}api/ffmpeg/${id}`).then(res => (res.json())).then((data) => {
+		if (typeof(data.status) !== 'undefined' && data.status !== false) {
+			process.exit(parseInt(data.status));
+		}
+	}).catch((err) => {
+		console.error(err);
+	});
+}
+
 // Call the load-balancer
 fetch(`${config.URL}api/ffmpeg`, {
 	method: 'POST',
@@ -21,12 +35,9 @@ fetch(`${config.URL}api/ffmpeg`, {
 		arg,
 		env
 	})
+}).then(res => (res.json())).then((data) => {
+	id = data.id;
+	setInterval(() => {checkStatus(); }, 10000);
 }).catch((err) => {
 	console.error(err);
 });
-
-/**
- * We need to keep alive the process otherwise
- * plex send a bad mpd file
-**/
-setInterval(() => {}, 3600000);
