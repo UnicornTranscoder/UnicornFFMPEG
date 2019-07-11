@@ -1,6 +1,6 @@
 {
   "name": "unicorn-ffmpeg",
-  "version": "2.0.0",
+  "version": "2.2.1",
   "description": "Fake FFMPEG binary to extract arguments",
   "bin": "app.js",
   "scripts": {
