@@ -9,10 +9,10 @@
   "author": "Maxime BACONNAIS",
   "license": "MIT",
   "dependencies": {
-    "node-fetch": "^2.3.0"
+    "node-fetch": "^2.6.0"
   },
   "devDependencies": {
-    "pkg": "^4.3.7"
+    "pkg": "^4.4.0"
   },
   "pkg": {
     "targets": [
