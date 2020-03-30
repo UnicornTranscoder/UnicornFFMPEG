@@ -1,3 +1,5 @@
+![](https://raw.githubusercontent.com/UnicornTranscoder/Logo/master/transparent.png)
+
 ## UnicornFFMPEG
 
 This software is a part of __UnicornTranscoder__ project, it's a binary to replace the official __Plex Transcoder__, the binary will send parameters to __UnicornLoadBalancer__.
