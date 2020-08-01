@@ -10,7 +10,7 @@ This software is a part of __UnicornTranscoder__ project, it's a binary to repla
 * [UnicornLoadBalancer](https://github.com/UnicornTranscoder/UnicornLoadBalancer)
 * [UnicornFFMPEG](https://github.com/UnicornTranscoder/UnicornFFMPEG)
 
-## Suport us!
+## Support us!
 
 The UnicornTranscoder project is an open source software, maintained by @drouarb and @Maxou44. If you want to support us, you can tip us on Ko-fi: https://ko-fi.com/unicorntranscoder ☕
 
